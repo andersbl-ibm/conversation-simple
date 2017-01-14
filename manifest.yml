@@ -1,15 +1,13 @@
----
-declared-services:
-  my-conversation-service:
-    label: conversation
-    plan: free
 applications:
-- name: conversation-simple
-  command: npm start
-  path: .
+- path: .
   memory: 256M
   instances: 1
-  services:
-  - my-conversation-service
+  domain: mybluemix.net
+  name: NordicArchitectChatBot
+  host: NordicArchitectChatBot
+  disk_quota: 1024M
   env:
-    NPM_CONFIG_PRODUCTION: false
+    CONVERSATION_USERNAME: eaa19639-d64d-42fa-9570-84a98ad30c46
+    CONVERSATION_PASSWORD: LZXMIvh5Gwqm
+    WORKSPACE_ID: 762ad1ff-c60c-4147-9772-a96f54d23ae7
+  command: npm start
